@@ -46,6 +46,5 @@ pip install xxx
 
 ### K-means clustering for dynamic regulatory edges
 
-### Identification of TF regulatory activity evolution patterns
 
 ### Reconstruction of stage-specific GRNs
