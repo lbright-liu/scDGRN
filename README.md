@@ -79,7 +79,7 @@ Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain
 python dynamic_perturbation.py
 ```
 ### Detection of co-occurring transcriptional regulatory modules (TRMs)
-Taking the "demo_data/hesc2/regulatory_tk.csv" ** file as sample input, obtain the transcriptional regulation modules (TRMs) that are always present throughout the dynamic process by using the following command:
+Taking the **"demo_data/hesc2/regulatory_tk.csv"** file as sample input, obtain the transcriptional regulation modules (TRMs) that are always present throughout the dynamic process by using the following command:
 ```shell
 python TRMs_detection.py
 ```
