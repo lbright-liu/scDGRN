@@ -54,10 +54,10 @@ python GRN_TL_main.py
 The result output is as follows:
 
 ```
-|TF|Target|score|
-|JUN|TLK1|0.756|
-|REL|CBFB|0.831|
-|SOX6|TEAD2|0.246|
+TF      Target    score
+JUN     TLK1      0.756
+REL     CBFB      0.831
+SOX6    TEAD2     0.246
 ...
 ```
 ### Dynamic GRNs reconstruction
