@@ -31,20 +31,70 @@ Other packages can be easily installed by calling following command:
 pip install xxx
 ```
 ### Prepare input files
+The data for demo is in processed_data/mHSC-E. The sample data contained 1204 genes and 33 TFs at three time points, with a total of 1071 cells.
+* **Target.csv**: all genes and their index numbers.
+* **TF.csv**: all TFs and their index numbers in Target.csv.
+* **label.csv**: cell-type-specific prior regulatory knowledge, collected from gene regulatory databases, biological experiments, and other gold standards.
+* **Train_set1.csv, Validation_set1.csv, and Test_set1.csv**: label data for model training and evaluation, which can be obtained using the previous three files by running the following command:
+  ```shell
+  python train_test_split.py
+  ```
+* **mEc3_expression.csv**: time-series gene expression matrix for all time points, with rows representing genes and columns representing cells.
 
 ### Cell-type-specific GRN inference
+Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction:
+```shell
+python cell_type_specific_GRN_main.py
+```
+For some cell types lacking specific prior knowledge, GRNS can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge:
+```shell
+python GRN_TL_main.py
+```
+The result output is as follows:
 
+```
+|TF|Target|score|
+|JUN|TLK1|0.756|
+|REL|CBFB|0.831|
+|SOX6|TEAD2|0.246|
+...
+```
 ### Dynamic GRNs reconstruction
-
+We can reconstruct the directed or undirected GRN at each time point using time-series expression data.
 #### Undirected dynamic network
-
+```shell
+python dgrn_main.py --flag False
+```
 #### Directed dynamic network
+```shell
+python dgrn_main.py --flag True
+```
+The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
 ### Identification of key genes based on dynamic network perturbation
-
+Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in Fig. e, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
+Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
+```shell
+python dynamic_perturbation.py
+```
 ### Detection of co-occurring transcriptional regulatory modules (TRMs)
-
+Taking the "demo_data/hesc2/regulatory_tk.csv" ** file as sample input, obtain the transcriptional regulation modules (TRMs) that are always present throughout the dynamic process by using the following command:
+```shell
+python TRMs_detection.py
+```
 ### K-means clustering for dynamic regulatory edges
-
-
+By k-means clustering of score vectors composed of regulatory edges in dynamic GRNs, different edge clusters can be obtained, which is conducive to further study of fine-grained dynamic processes.
+```shell
+python regulatory_edge_cluster.py
+```
 ### Reconstruction of stage-specific GRNs
+DynGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
+![image](https://github.com/lbright-liu/DynGRN/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
+Build stage-specific dynamic GRNs using the following command:
+```shell
+python Stage_Specific_GRN.py --input_file xxx_tk.csv
+```
+**'xxx_tk.csv'** can be time-series single-cell gene expression data or time-series bulk gene expression data.
+
+
+
