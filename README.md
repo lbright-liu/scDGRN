@@ -16,13 +16,14 @@ cd DynGRN
 We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. DynGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration.
 #### Requirements
 * python 3.8
-* pytorch xx
-* torch-geometric: xx
+* pytorch 1.12.1
+* Driver Version: 470.182.03
 * CUDA Version: 11.4
+* numpy, scipy, pandas, scikit-learn, tqdm, etc.
 
 #### Setup a conda environment
 ```shell
-conda create -y --name DynGRN python=3.xx
+conda create -y --name DynGRN python=3.8
 conda activate DynGRN
 ```
 #### Install using pip
@@ -72,7 +73,7 @@ python dgrn_main.py --flag True
 The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
 ### Identification of key genes based on dynamic network perturbation
-Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in Fig. e, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
+Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. e**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
 Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
 ```shell
 python dynamic_perturbation.py
