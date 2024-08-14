@@ -1,6 +1,7 @@
 # DynGRN
 DynGRN is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-type-specific prior regulatory knowledge as inputs, then conducts cell-type-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
-![overall_DynGRN_v8](https://github.com/lbright-liu/DynGRN/assets/96679804/fe1b1d21-668f-4c3d-b7c2-accc50197767)
+![image](https://github.com/user-attachments/assets/84fa8b5d-5786-4b0d-bdb5-1e287e896853)
+
 **The DynGRN model has the following benefits:**
 * Model time-series single-cell transcriptome data simultaneously from the two levels of network topology and temporal evolution
 * Introduce cell-type-specific prior knowledge to guide model training more accurately. Even if specific prior knowledge is lacking, the integrated common prior gene interaction network can be used for pre-training and then further fine-tuning to construct GRN
