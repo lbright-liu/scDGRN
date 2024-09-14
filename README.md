@@ -93,7 +93,9 @@ python regulatory_edge_cluster.py
 ```
 ## Reconstruction of stage-specific GRNs
 DynGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
+<!--
 ![image](https://github.com/lbright-liu/DynGRN/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
+-->
 Build stage-specific dynamic GRNs using the following command:
 ```shell
 python Stage_Specific_GRN.py --input_file xxx_tk.csv
