@@ -5,7 +5,7 @@ DynGRN is a tool for deciphering fine-grained dynamic life processes using time-
 
 
 
-**The DynGRN model has the following benefits:**
+**The CellEvo model has the following benefits:**
 * Model time-series single-cell transcriptome data simultaneously from the two levels of network topology and temporal evolution
 * Introduce cell-type-specific prior knowledge to guide model training more accurately. Even if specific prior knowledge is lacking, the integrated common prior gene interaction network can be used for pre-training and then further fine-tuning to construct GRN
 * Widely used to analyze a variety of different fine-grained dynamic life processes
