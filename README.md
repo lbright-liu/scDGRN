@@ -1,5 +1,5 @@
-# DynGRN
-DynGRN is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-type-specific prior regulatory knowledge as inputs, then conducts cell-type-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
+# CellEvo
+CellEvo is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-lineage-specific prior regulatory knowledge as inputs, then conducts cell-lineage-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
 
 ![image](https://github.com/user-attachments/assets/84fa8b5d-5786-4b0d-bdb5-1e287e896853)
 
@@ -13,11 +13,11 @@ DynGRN is a tool for deciphering fine-grained dynamic life processes using time-
 ## Installation
 ### Download the repository
 ```shell
-git clone git@github.com:lbright-liu/DynGRN
-cd DynGRN
+git clone git@github.com:lbright-liu/CellEvo
+cd CellEvo
 ```
 ### Install required packages
-We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. DynGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration.
+We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. CellEvo was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration.
 #### Requirements
 * python 3.8
 * pytorch 1.12.1
@@ -27,8 +27,8 @@ We recommend using Anaconda to get the dependencies. If you don't already have A
 
 #### Setup a conda environment
 ```shell
-conda create -y --name DynGRN python=3.8
-conda activate DynGRN
+conda create -y --name CellEvo python=3.8
+conda activate CellEvo
 ```
 #### Install using pip
 Other packages can be easily installed by calling following command:
@@ -93,9 +93,9 @@ By k-means clustering of score vectors composed of regulatory edges in dynamic G
 python regulatory_edge_cluster.py
 ```
 ## Reconstruction of stage-specific GRNs
-DynGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
+CellEvo was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
 <!--
-![image](https://github.com/lbright-liu/DynGRN/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
+![image](https://github.com/lbright-liu/CellEvo/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
 -->
 Build stage-specific dynamic GRNs using the following command:
 ```shell
