@@ -1,7 +1,8 @@
 # CellEvo
 CellEvo is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-lineage-specific prior regulatory knowledge as inputs, then conducts cell-lineage-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
 
-![image](https://github.com/user-attachments/assets/84fa8b5d-5786-4b0d-bdb5-1e287e896853)
+
+![image](https://github.com/user-attachments/assets/0ea29cb4-7d39-4eb0-8146-d763b8d187b6)
 
 
 
