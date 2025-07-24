@@ -50,7 +50,7 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
 ## Cell-lineage-specific GRN inference
 Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction:
 ```shell
-python cell_type_specific_GRN_main.py
+python cell_lineage_specific_GRN_main.py
 ```
 For some cell types lacking specific prior knowledge, GRNS can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge:
 ```shell
