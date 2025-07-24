@@ -47,7 +47,7 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
   ```
 * **mEc3_expression.csv**: time-series gene expression matrix for all time points, with rows representing genes and columns representing cells.
 
-## Cell-type-specific GRN inference
+## Cell-lineage-specific GRN inference
 Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction:
 ```shell
 python cell_type_specific_GRN_main.py
@@ -83,11 +83,7 @@ Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain
 ```shell
 python dynamic_perturbation.py
 ```
-## Detection of co-occurring transcriptional regulatory modules (TRMs)
-Taking the **"demo_data/hesc2/regulatory_tk.csv"** file as sample input, obtain the transcriptional regulation modules (TRMs) that are always present throughout the dynamic process by using the following command:
-```shell
-python TRMs_detection.py
-```
+
 ## K-means clustering for dynamic regulatory edges
 By k-means clustering of score vectors composed of regulatory edges in dynamic GRNs, different edge clusters can be obtained, which is conducive to further study of fine-grained dynamic processes.
 ```shell
