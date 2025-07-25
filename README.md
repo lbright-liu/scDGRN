@@ -1,12 +1,12 @@
-# CellEvo
-CellEvo is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-lineage-specific prior regulatory knowledge as inputs, then conducts cell-lineage-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
+# scDGRN
+scDGRN is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-lineage-specific prior regulatory knowledge as inputs, then conducts cell-lineage-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
 
 
 ![image](https://github.com/user-attachments/assets/0ea29cb4-7d39-4eb0-8146-d763b8d187b6)
 
 
 
-**The CellEvo model has the following benefits:**
+**The scDGRN model has the following benefits:**
 * Model time-series single-cell transcriptome data simultaneously from the two levels of network topology and temporal evolution
 * Introduce cell-type-specific prior knowledge to guide model training more accurately. Even if specific prior knowledge is lacking, the integrated common prior gene interaction network can be used for pre-training and then further fine-tuning to construct GRN
 * Widely used to analyze a variety of different fine-grained dynamic life processes
@@ -14,11 +14,11 @@ CellEvo is a tool for deciphering fine-grained dynamic life processes using time
 ## Installation
 ### Download the repository
 ```shell
-git clone git@github.com:lbright-liu/CellEvo
-cd CellEvo
+git clone git@github.com:lbright-liu/scDGRN
+cd scDGRN
 ```
 ### Install required packages
-We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. CellEvo was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration.
+We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. scDGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration.
 #### Requirements
 * python 3.8
 * pytorch 1.12.1
@@ -28,8 +28,8 @@ We recommend using Anaconda to get the dependencies. If you don't already have A
 
 #### Setup a conda environment
 ```shell
-conda create -y --name CellEvo python=3.8
-conda activate CellEvo
+conda create -y --name scDGRN python=3.8
+conda activate scDGRN
 ```
 #### Install using pip
 Other packages can be easily installed by calling following command:
@@ -90,9 +90,9 @@ By k-means clustering of score vectors composed of regulatory edges in dynamic G
 python regulatory_edge_cluster.py
 ```
 ## Reconstruction of stage-specific GRNs
-CellEvo was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
+scDGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
 <!--
-![image](https://github.com/lbright-liu/CellEvo/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
+![image](https://github.com/lbright-liu/scDGRN/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
 -->
 Build stage-specific dynamic GRNs using the following command:
 ```shell
