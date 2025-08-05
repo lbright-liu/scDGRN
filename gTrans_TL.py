@@ -455,7 +455,7 @@ class GTransformer(nn.Module):
         #x = self.position(inputs)  ##
         x_tf = x_pos_tf.to(device)
         x_target = x_pos_target.to(device)
-        # 应用多头注意力机制层
+        # 
         #multihead = nn.MultiheadAttention(self.embed_dim,self.num_heads).to(device)
         #attn_output, attn_weights = self.multihead_attn(x, x, x)
         #attn_output, attn_weights = multihead(x,x,x)
@@ -568,8 +568,7 @@ class GTransformer(nn.Module):
 
             ##
             # prob = torch.mul(attention_output_tf, attention_output_target)
-            # prob = torch.sum(prob, dim=1).view(-1, 1)  ##整个batch的预测结果，是一列tensor
-
+            # prob = torch.sum(prob, dim=1).view(-1, 1)  
 
             ########### two_label_causal
             liner_concat = torch.cat((attention_output_tf, attention_output_target), dim=1)
@@ -764,7 +763,7 @@ class MultiHeadAttentionLayer(nn.Module):
 class Attention(nn.Module):
     def __init__(self, input_dim):
         super(Attention, self).__init__()
-        self.input_dim = input_dim # gru隐藏层输出128维
+        self.input_dim = input_dim 
         self.linear = nn.Linear(input_dim, input_dim)
         self.softmax = nn.Softmax(dim=1)
 
@@ -842,6 +841,7 @@ class AttentionLayer(nn.Module):
             output_data = output_data + self.bias
         ##############
         return output_data
+
 
 
 
