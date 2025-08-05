@@ -213,7 +213,7 @@ test_data = pd.read_csv(test_file, index_col=0).values
 ##
 train_load = scRNADataset(train_data, data_feature[0].shape[0], flag=args.flag)
 ##
-adj = train_load.Adj_Generate(tf,loop=args.loop) # 用train_set组成的矩阵（这是叫做先验知识嘛？？）阿哲
+adj = train_load.Adj_Generate(tf,loop=args.loop) # 
 print(adj)
 
 adj = adj2saprse_tensor(adj)
@@ -281,7 +281,7 @@ for epoch in range(args.epochs):
         if args.flag:
             train_y = train_y.to(device)
         else:
-            train_y = train_y.to(device).view(-1, 1) # view()相当于reshape()
+            train_y = train_y.to(device).view(-1, 1) # view() = reshape()
 
 
         # train_y = train_y.to(device).view(-1, 1)
@@ -370,4 +370,5 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
