@@ -184,7 +184,7 @@ def train_val_test_set(label_file,Gene_file,TF_file,train_set_file,val_set_file,
         test_neg[k] = []
 
 
-    ## -----------情形1--------------------
+    ## -----------situation 1--------------------
     test_neg_set = []
     #for i in range(test_neg_num):
     print("test positive count:{}".format(count))
@@ -203,7 +203,7 @@ def train_val_test_set(label_file,Gene_file,TF_file,train_set_file,val_set_file,
             test_neg_set.append([t1, t2])
 
 
-    ## -----------情形2----------------------
+    ## -----------situation 2----------------------
     # for k in test_pos.keys():
     #     test_neg[k] = []
     #     print(len(test_pos[k]))
@@ -282,4 +282,5 @@ if __name__ == '__main__':
             #                                           test_set_file)
             #else:
             train_val_test_set(label_file, Gene2file, TF2file, train_set_file, val_set_file, test_set_file, density)
+
 
