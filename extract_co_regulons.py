@@ -25,7 +25,7 @@ def get_common_targets(df, tf_list):
 
     co_target = set(tf_target_dict[tf_list[0]])  # Initialize the intersection as the Target of the first TF
     for tf in tf_list[1:]:
-        co_target &= tf_target_dict[tf]  # 逐次取交集
+        co_target &= tf_target_dict[tf]  # 
 
     return tf_list + list(co_target)
 
@@ -37,7 +37,7 @@ def get_common_targets(df, tf_list):
 # }
 # df = pd.DataFrame(data)
 
-df = pd.read_csv("./aged_opc/ag_opc_prediction4_3000.csv")
+df = pd.read_csv("./demo_data/aged_opc/ag_opc_prediction4_3000.csv")
 
 
 
@@ -51,10 +51,11 @@ tf_list = ['NR2F1','ESR1','POU2F1']
 # Extract the jointly regulated Targets
 co_target = get_common_targets(df, tf_list)
 
-# 打印结果
+# 
 print(f"\n{', '.join(tf_list)} The jointly regulated target:")
 if co_target:
     print(co_target)
 else:
     print("No common Target for regulation has been found")
+
 
