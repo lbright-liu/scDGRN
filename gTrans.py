@@ -455,7 +455,7 @@ class GTransformer(nn.Module):
         #x = self.position(inputs)  ##
         x_tf = x_pos_tf.to(device)
         x_target = x_pos_target.to(device)
-        # 应用多头注意力机制层
+        # 
         #multihead = nn.MultiheadAttention(self.embed_dim,self.num_heads).to(device)
         #attn_output, attn_weights = self.multihead_attn(x, x, x)
         #attn_output, attn_weights = multihead(x,x,x)
@@ -841,6 +841,7 @@ class AttentionLayer(nn.Module):
             output_data = output_data + self.bias
         ##############
         return output_data
+
 
 
 
