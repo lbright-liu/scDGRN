@@ -72,7 +72,6 @@ class scRNADataset(Dataset):
     def Covariance_Generate(self, x_data,tf_data,target_data,direction=False, loop=False):
 
         adj = sp.dok_matrix((self.num_gene, self.num_gene), dtype=np.float32)
-        ## 测试
         tf = tf_data.cpu().numpy()
         print(tf)
 
@@ -93,7 +92,7 @@ class scRNADataset(Dataset):
                     adj[pos_tf, pos_target] = 1.0
                     ##
                     adj[pos_target, pos_tf] = 1.0
-            print("大于阈值的有：{}".format(count))
+            print("Those greater than the threshold have：{}".format(count))
             # a_with_index = [(val, idx) for idx, val in enumerate(r_list)]
             # #
             # sorted_a = sorted(a_with_index, key=lambda x: x[0], reverse=True)[:100]
@@ -111,7 +110,7 @@ class scRNADataset(Dataset):
                 # adj[pos_tf, pos_target] = cos_sim
                 # adj[pos_target, pos_tf] = cos_sim
 
-            #print("当前tf与所有target的相似度：{}".format(r_list))
+            #print("The similarity between tf and all targets：{}".format(r_list))
 
             ##
             #
@@ -284,34 +283,4 @@ def Network_Statistic(data_type,net_scale,net_type):
 
     else:
         raise ValueError
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
