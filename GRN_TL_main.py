@@ -31,7 +31,7 @@ for few_rate in [0.01,0.05,0.1]:
         import argparse
         import matplotlib.pyplot as plt
 
-        os.environ["CUDA_VISIBLE_DEVICES"] = "4"
+        os.environ["CUDA_VISIBLE_DEVICES"] = "0"
         time_point = 3
         d_type = 'mDC'
         #d_type = 'mesc1'
@@ -517,4 +517,5 @@ print("AUROC_mean:{}".format(mean_AUROC_total))
 print("AUROC_std:{}".format(std_AUROC_total))
 print("AUPRC_mean:{}".format(mean_AUPRC_total))
 print("AUPRC_std:{}".format(std_AUPRC_total))
+
 
