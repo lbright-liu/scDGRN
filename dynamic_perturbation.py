@@ -74,7 +74,6 @@ def calculate_entropy(network):
     return entropy
 
 
-#
 def remove_gene_and_edges(network, gene):
     modified_network = [edge for edge in network if gene not in edge]
     return modified_network
@@ -82,21 +81,17 @@ def remove_gene_and_edges(network, gene):
 
 
 
-#
-#
+
 entropy_list = [calculate_entropy(network) for network in network_list]
 
-#
 mean_entropy = np.mean(entropy_list)
 std_entropy = np.std(entropy_list)
 
-#
 gene_scores = {}
 for gene in all_genes:  # all_genes
     print("!!")
     perturbation_values = []
     for i, network in enumerate(network_list):
-        #
         modified_network = remove_gene_and_edges(network, gene)
 
         modified_entropy = calculate_entropy(modified_network)
@@ -117,4 +112,5 @@ for gene in all_genes:  # all_genes
 sorted_genes = sorted(gene_scores.items(), key=lambda x: x[1], reverse=True)
 print(sorted_genes[:20])
 df = pd.DataFrame(sorted_genes,columns=['gene','R_score'])
+
 df.to_csv("key_gene2.csv",index=False)
