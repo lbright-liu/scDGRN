@@ -20,7 +20,7 @@ from sklearn import metrics
 import argparse
 import matplotlib.pyplot as plt
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "5"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 time_point = 3
 #d_type = 'mDC'
 d_type = 'mHSC-E'
@@ -370,5 +370,6 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
 
