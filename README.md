@@ -14,7 +14,7 @@ scDGRN is a tool for deciphering fine-grained dynamic life processes using time-
 ## Installation
 ### Download the repository
 ```shell
-git clone git@github.com:lbright-liu/scDGRN
+git clone https://github.com/lbright-liu/scDGRN
 cd scDGRN
 ```
 ### Install required packages
@@ -30,7 +30,6 @@ We recommend using Anaconda to get the dependencies. If you don't already have A
 ```shell
 conda create -y --name scDGRN python=3.8
 conda activate scDGRN
-pip install -r requirements.txt
 ```
 #### Install using pip
 Other packages can be easily installed by calling following command:
