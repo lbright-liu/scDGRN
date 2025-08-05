@@ -48,11 +48,11 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
 * **mEc3_expression.csv**: time-series gene expression matrix for all time points, with rows representing genes and columns representing cells.
 
 ## Cell-lineage-specific GRN inference
-Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction:
+Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The codes related to user data upload and GRN construction are being continuously updated...):
 ```shell
 python cell_lineage_specific_GRN_main.py
 ```
-For some cell types lacking specific prior knowledge, GRNS can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge:
+For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The codes related to user data upload and dynamic GRNs reconstruction are being continuously updated...):
 ```shell
 python GRN_TL_main.py
 ```
@@ -78,17 +78,20 @@ python dgrn_main.py --flag True
 The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
 ## Identification of key genes based on dynamic network perturbation
-Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. e**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
+Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. d**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
 Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
 ```shell
 python dynamic_perturbation.py
 ```
 
-## K-means clustering for dynamic regulatory edges
-By k-means clustering of score vectors composed of regulatory edges in dynamic GRNs, different edge clusters can be obtained, which is conducive to further study of fine-grained dynamic processes.
+## Mining of dynamic regulatory patterns
+Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. d**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
+Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
 ```shell
-python regulatory_edge_cluster.py
+python xxxx.py
 ```
+
+
 ## Reconstruction of stage-specific GRNs
 scDGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
 <!--
