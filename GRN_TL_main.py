@@ -85,7 +85,7 @@ for few_rate in [0.01,0.05,0.1]:
 
 
         net_type = "Specific"
-        ## 返回网络密度target/tf*gene
+        ## return density target/tf*gene
         # density = Network_Statistic(data_type,num,net_type)
         # exp_file = './'+data_type+'/TFs+'+str(num)+'/BL--ExpressionData.csv'
         # tf_file = './'+data_type+'/TFs+'+str(num)+'/TF.csv'
@@ -124,7 +124,7 @@ for few_rate in [0.01,0.05,0.1]:
         # loader4 = load_data(data4_input)
         #loader5 = load_data(data5_input)
         #loader6 = load_data(data6_input)
-        ## 可以调用类里面得函数了
+        ## 
         # feature1 = loader1.exp_data() # 1120(gene)*421(cell)
         # feature2 = loader2.exp_data()
         # feature3 = loader3.exp_data()
@@ -225,7 +225,7 @@ for few_rate in [0.01,0.05,0.1]:
         train_load = scRNADataset(train_data, data_feature[0].shape[0], flag=args.flag)
         goal_load = scRNADataset(goal_data, data_feature[0].shape[0], flag=args.flag)
         ##
-        adj = train_load.Adj_Generate(tf,loop=args.loop) # 用train_set组成的矩阵（这是叫做先验知识嘛？？）阿哲
+        adj = train_load.Adj_Generate(tf,loop=args.loop) # 
         print(adj)
 
         adj = adj2saprse_tensor(adj)
@@ -287,8 +287,8 @@ for few_rate in [0.01,0.05,0.1]:
             for train_x, train_y in DataLoader(train_load, batch_size=args.batch_size, shuffle=True):
                 model.train()
                 optimizer.zero_grad()
-                # print("取出一批次：{}".format(train_x))
-                # print("取出一批次：{}".format(train_y))
+                # print("Take out a batch：{}".format(train_x))
+                # print("Take out a batch：{}".format(train_y))
 
                 if args.flag:
                     train_y = train_y.to(device)
@@ -334,7 +334,7 @@ for few_rate in [0.01,0.05,0.1]:
             ##
             if args.flag:
                 score = torch.softmax(score, dim=1)
-                ## 评估指标---准确率就行
+                ## 
                 print(score)
                 acc = causal_evaluation(validation_data[:,-1],score)
 
@@ -374,7 +374,7 @@ for few_rate in [0.01,0.05,0.1]:
 
             ##
             acc = causal_evaluation(test_data[:, -1], score)
-            print("测试集acc：{}".format(acc))
+            print("test set acc：{}".format(acc))
 
 
         else:
@@ -418,13 +418,13 @@ for few_rate in [0.01,0.05,0.1]:
             for train_x, train_y in DataLoader(goal_load, batch_size=16, shuffle=True):
                 #model.train()
                 optimizer.zero_grad()
-                # print("取出一批次：{}".format(train_x))
-                # print("取出一批次：{}".format(train_y))
+                # print("Take out a batch：{}".format(train_x))
+                # print("Take out a batch：{}".format(train_y))
 
                 if args.flag:
                     train_y = train_y.to(device)
                 else:
-                    train_y = train_y.to(device).view(-1, 1) # view()相当于reshape()
+                    train_y = train_y.to(device).view(-1, 1) #
 
 
                 # train_y = train_y.to(device).view(-1, 1)
@@ -483,7 +483,7 @@ for few_rate in [0.01,0.05,0.1]:
 
             ##
             acc = causal_evaluation(test_data[:, -1], score)
-            print("测试集acc：{}".format(acc))
+            print("test set acc：{}".format(acc))
 
 
         else:
@@ -502,17 +502,13 @@ print("AUROC_total:{}".format(AUROC_total))
 print("AUPRC_total:{}".format(AUPRC_total))
 
 for group in AUROC_total:
-    # 计算均值
     mean_value = np.mean(group)
-    # 计算标准差
     std_deviation = np.std(group)
     mean_AUROC_total.append(mean_value)
     std_AUROC_total.append(std_deviation)
 
 for group in AUPRC_total:
-    # 计算均值
     mean_value = np.mean(group)
-    # 计算标准差
     std_deviation = np.std(group)
     mean_AUPRC_total.append(mean_value)
     std_AUPRC_total.append(std_deviation)
@@ -521,3 +517,4 @@ print("AUROC_mean:{}".format(mean_AUROC_total))
 print("AUROC_std:{}".format(std_AUROC_total))
 print("AUPRC_mean:{}".format(mean_AUPRC_total))
 print("AUPRC_std:{}".format(std_AUPRC_total))
+
