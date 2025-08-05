@@ -30,7 +30,7 @@ We recommend using Anaconda to get the dependencies. If you don't already have A
 ```shell
 conda create -y --name scDGRN python=3.8
 conda activate scDGRN
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 #### Install using pip
 Other packages can be easily installed by calling following command:
