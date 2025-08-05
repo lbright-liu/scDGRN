@@ -1,4 +1,4 @@
-# scDGRN
+# scDGRN (Running tutorials are continuously updated...)
 scDGRN is a tool for deciphering fine-grained dynamic life processes using time-series transcriptomics data. It takes time-series gene expression profiles (snapshots data or pseudo-time-series data) and cell-lineage-specific prior regulatory knowledge as inputs, then conducts cell-lineage-specific gene regulatory network (GRN) construction and dynamic GRNs rewiring. 
 
 
