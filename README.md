@@ -52,7 +52,7 @@ Taking time-series single-cell gene expression matrix and cell type-specific pri
 ```shell
 python cell_lineage_specific_GRN_main.py
 ```
-For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The codes related to user data upload and dynamic GRNs reconstruction are being continuously updated...):
+For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mDC cell line, and you can directly run the following command. The codes related to user data upload and dynamic GRNs reconstruction are being continuously updated...):
 ```shell
 python GRN_TL_main.py
 ```
@@ -66,14 +66,10 @@ SOX6    TEAD2     0.246
 ...
 ```
 ## Dynamic GRNs reconstruction
-We can reconstruct the directed or undirected GRN at each time point using time-series expression data.
-#### Undirected dynamic network
+We can reconstruct the dynamic GRNs at each time point using time-series expression data (take the hesc2 dataset as an example).
+
 ```shell
-python dgrn_main.py --flag False
-```
-#### Directed dynamic network
-```shell
-python dgrn_main.py --flag True
+python dgrn_main.py
 ```
 The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
@@ -85,12 +81,16 @@ python dynamic_perturbation.py
 ```
 
 ## Mining of dynamic regulatory patterns
-Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. d**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
-Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
+Based on the inferred dynamic gene regulatory network, we can obtain the TF groups of different dynamic regulatory patterns by using the following command:
 ```shell
-python xxxx.py
+python dynamic_pattern.py
 ```
 
+## Discovery of co-regulons
+Based on the inferred dynamic gene regulatory network, we can observe the phenomenon of multi-factor coordinated regulation throughout the entire dynamic process:
+```shell
+python extract_co_regulons.py
+```
 
 ## Reconstruction of stage-specific GRNs
 scDGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
