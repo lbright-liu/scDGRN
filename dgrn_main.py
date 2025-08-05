@@ -114,7 +114,7 @@ target_file = 'processed_data/'+d_type+'/Target.csv'
 #loader5 = load_data(data5_input)
 #loader6 = load_data(data6_input)
 ##
-# feature1 = loader1.exp_data() # 标准化后的数据，1120(gene)*421(cell)
+# feature1 = loader1.exp_data() # after normalize 1120(gene)*421(cell)
 # feature2 = loader2.exp_data()
 # feature3 = loader3.exp_data()
 # feature4 = loader4.exp_data()
@@ -186,7 +186,7 @@ tf = tf.to(device)
 
 ## data_feature(tensor),tf(tensor),target(numpy)
 
-## 已经划分好的数据集
+## the divided dataset
 # train_file = './Train_validation_test/'+data_type+' '+str(num)+'/Train_set.csv'
 # test_file = './Train_validation_test/'+data_type+' '+str(num)+'/Test_set.csv'
 # val_file = './Train_validation_test/'+data_type+' '+str(num)+'/Validation_set.csv'
@@ -213,7 +213,7 @@ test_data = pd.read_csv(test_file, index_col=0).values
 ##
 train_load = scRNADataset(train_data, data_feature[0].shape[0], flag=args.flag)
 ##
-adj = train_load.Adj_Generate(tf,loop=args.loop) # 用train_set组成的矩阵（这是叫做先验知识嘛？？）阿哲
+adj = train_load.Adj_Generate(tf,loop=args.loop) # 
 print(adj)
 
 adj = adj2saprse_tensor(adj)
@@ -276,14 +276,13 @@ for epoch in range(args.epochs):
     for train_x, train_y in DataLoader(train_load, batch_size=args.batch_size, shuffle=True):
         model.train()
         optimizer.zero_grad()
-        # print("取出一批次：{}".format(train_x))
-        # print("取出一批次：{}".format(train_y))
+        # print("Take out a batch：{}".format(train_x))
+        # print("Take out a batch：{}".format(train_y))
 
         if args.flag:
             train_y = train_y.to(device)
         else:
-            train_y = train_y.to(device).view(-1, 1) # view()相当于reshape()
-
+            train_y = train_y.to(device).view(-1, 1) # 
 
         # train_y = train_y.to(device).view(-1, 1)
         #model = model.module
@@ -363,7 +362,7 @@ if args.flag:
 
     ##
     acc = causal_evaluation(test_data[:, -1], score)
-    print("测试集acc：{}".format(acc))
+    print("test set acc：{}".format(acc))
 
 
 else:
@@ -371,4 +370,5 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
