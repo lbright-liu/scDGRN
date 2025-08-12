@@ -55,7 +55,7 @@ python cell_lineage_specific_GRN_main.py
 ```
 For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mDC cell line, and you can directly run the following command. The codes related to user data upload and dynamic GRNs reconstruction are being continuously updated...):
 ```shell
-python GRN_TL_main.py --fine_tine_file fine_tine.csv
+python GRN_TL_main.py
 ```
 The result output is as follows:
 
