@@ -7,7 +7,7 @@ std_AUPRC_total = []
 for few_rate in [0.01,0.05,0.1]:
     AUROC_each = []
     AUPRC_each = []
-    for rounds in ['r1','r2','r3','r4','r5']:
+    for rounds in ['r1']:
 
         from torch.utils.data import DataLoader
         import torch
@@ -517,5 +517,6 @@ print("AUROC_mean:{}".format(mean_AUROC_total))
 print("AUROC_std:{}".format(std_AUROC_total))
 print("AUPRC_mean:{}".format(mean_AUPRC_total))
 print("AUPRC_std:{}".format(std_AUPRC_total))
+
 
 
