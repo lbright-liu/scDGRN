@@ -34,6 +34,7 @@ conda activate scDGRN
 #### Install using pip
 Other packages can be easily installed by calling following command:
 ```shell
+pip install torch==1.12.1
 pip install xxx
 ```
 ## Prepare input files
