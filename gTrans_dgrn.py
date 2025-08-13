@@ -18,6 +18,7 @@ class GTransformer(nn.Module):
         self.type = type
         self.reduction = reduction
         self.time_point = 6
+        self.recons_tp = 6
         self.flag = False
 
         # self.attention = nn.Sequential(
@@ -396,7 +397,9 @@ class GTransformer(nn.Module):
         #     return prob
         # else:
         #     raise TypeError(r'{} is not available'.format(self.type))
-        t_p = self.time_point
+        
+        #t_p = self.time_point
+        t_p = self.recons_tp
         #h_t = []
         h_t_tf = []
         h_t_target = []
@@ -636,8 +639,9 @@ class GTransformer(nn.Module):
         #return prob
 
     ## 
-    def forward(self,x,adj,train_sample):
+    def forward(self,x,adj,train_sample, recons_tp):
         ## 
+        self.recons_tp = recons_tp
         train_tf_total = []
         train_target_total = []
         for i in range(self.time_point):
@@ -887,6 +891,7 @@ class AttentionLayer(nn.Module):
             output_data = output_data + self.bias
         ############## 
         return output_data
+
 
 
 
