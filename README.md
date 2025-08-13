@@ -67,7 +67,7 @@ SOX6    TEAD2     0.246
 ...
 ```
 ## Dynamic GRNs reconstruction
-We can reconstruct the dynamic GRNs at each time point using time-series expression data (take the hesc2 dataset as an example).
+We can reconstruct the dynamic GRNs at each time point using time-series expression data (take the hesc2 dataset as an example).  
 **Traing model:**
 ```shell
 python dgrn_main.py
