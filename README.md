@@ -76,11 +76,11 @@ python dgrn_main.py
 ```shell
 python output_TG_network.py
 ```
-The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
+The resulting output is shown in the **'processed_data/hesc2/hesc2_regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
 ## Identification of key genes based on dynamic network perturbation
 Identification of key genes (TFs and Non-TFs) based on dynamic network (including gene-gene edges) perturbation. As shown in **Fig. d**, firstly, a gene in the dynamic network is knocked out, and then the perturbation score of the gene is obtained by calculating the change of network entropy before and after the knockout. Finally, key genes are identified based on perturbation score.
-Taking the **'demo_data/hesc2/regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
+Taking the **'processed_data/hesc2/hesc2_regulatory_tk.csv'** file as sample inputs, obtain the perturbation score for each gene by using the following command:
 ```shell
 python dynamic_perturbation.py
 ```
