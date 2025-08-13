@@ -98,7 +98,7 @@ python extract_co_regulons.py
 ```
 
 ## Reconstruction of stage-specific GRNs
-scDGRN was extended to maize time-series transcriptome data to demonstrate its potential to model time-series bulk transcriptome data as well. The whole process is similar except that the integration of input data is different from that of single-cell processing.
+scDGRN is capable of constructing stage-specific GRN, which is of vital importance for depicting the fine-grained developmental state of cells.
 <!--
 ![image](https://github.com/lbright-liu/scDGRN/assets/96679804/34c2b86a-ac1f-4238-adb9-79c5bb55648d)
 -->
