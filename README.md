@@ -70,7 +70,12 @@ SOX6    TEAD2     0.246
 We can reconstruct the dynamic GRNs at each time point using time-series expression data (take the hesc2 dataset as an example).
 
 ```shell
+Traing model:
 python dgrn_main.py
+```
+```shell
+Reconstructing:
+python output_TG_network.py
 ```
 The resulting output is shown in the **'demo_data/hesc2/regulatory_tk.csv'** file, which takes the top 20% of the predicted scores.
 
