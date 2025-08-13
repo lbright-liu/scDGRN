@@ -2,7 +2,7 @@ from torch.utils.data import DataLoader
 import torch
 import torch.nn.functional as F
 from torch.optim import Adam
-from gRNN_hesc2 import GRNN
+from gTrans_dgrn import GTransformer
 from torch.optim.lr_scheduler import StepLR
 #import scipy.sparse as sp
 from utils import scRNADataset, load_data, adj2saprse_tensor, Evaluation,  causal_evaluation
@@ -380,6 +380,7 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
 
 
