@@ -2,11 +2,11 @@ import numpy as np
 import pandas as pd
 from collections import Counter
 
-df2 = pd.read_csv("./demo_data/hesc2/regulatory_t2.csv")
-df3 = pd.read_csv("./demo_data/hesc2/regulatory_t3.csv")
-df4 = pd.read_csv("./demo_data/hesc2/regulatory_t4.csv")
-df5 = pd.read_csv("./demo_data/hesc2/regulatory_t5.csv")
-df6 = pd.read_csv("./demo_data/hesc2/regulatory_t6.csv")
+df2 = pd.read_csv("./processed_data/hesc2/regulatory_t2.csv")
+df3 = pd.read_csv("./processed_data/hesc2/regulatory_t3.csv")
+df4 = pd.read_csv("./processed_data/hesc2/regulatory_t4.csv")
+df5 = pd.read_csv("./processed_data/hesc2/regulatory_t5.csv")
+df6 = pd.read_csv("./processed_data/hesc2/regulatory_t6.csv")
 
 
 result2= [(row[0], row[1]) for row in df2.values]
@@ -113,4 +113,5 @@ sorted_genes = sorted(gene_scores.items(), key=lambda x: x[1], reverse=True)
 print(sorted_genes[:20])
 df = pd.DataFrame(sorted_genes,columns=['gene','R_score'])
 
-df.to_csv("key_gene2.csv",index=False)
+df.to_csv("./processed_data/hesc2/key_gene_hesc2.csv",index=False)
+
