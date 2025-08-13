@@ -270,6 +270,9 @@ if not os.path.exists(model_path):
     os.makedirs(model_path)
 
 
+## Define a time point for reconstructing  recons_tp = 6
+recons_tp = 6
+
 ## 
 for epoch in range(args.epochs):
     running_loss = 0.0
@@ -290,7 +293,7 @@ for epoch in range(args.epochs):
         # train_y = train_y.to(device).view(-1, 1)
         #model = model.module
         #print("data_feature:{}".format(data_feature))
-        pred,tf_feature,target_feature = model(data_feature, adj, train_x) # model.forward(data_feature,adj,train_x)
+        pred,tf_feature,target_feature = model(data_feature, adj, train_x, recons_tp) # model.forward(data_feature,adj,train_x)
 
 
         #pred = torch.sigmoid(pred)
@@ -321,7 +324,7 @@ for epoch in range(args.epochs):
           'train loss:{}'.format(running_loss))
 
     model.eval()
-    score,tf_feature,target_feature = model(data_feature, adj, validation_data)
+    score,tf_feature,target_feature = model(data_feature, adj, validation_data, recons_tp)
     ##  
     if args.flag:
         score = torch.softmax(score, dim=1)
@@ -360,7 +363,7 @@ model.eval()
 # print(tf_embed.size())
 # embed2file(tf_embed,target_embed,target_file,tf_embed_path,target_embed_path)
 
-score,tf_feature,target_feature = model(data_feature, adj, test_data)
+score,tf_feature,target_feature = model(data_feature, adj, test_data, recons_tp)
 if args.flag:
     score = torch.softmax(score, dim=1)
 
@@ -374,6 +377,7 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
 
 
