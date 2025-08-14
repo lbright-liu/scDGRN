@@ -243,7 +243,7 @@ for few_rate in [0.01,0.05,0.1]:
         # mGMc2 = 150 mGMc3 = 128 mGMc4 = 128 mGMc5 = 256 mGMc6 = 150 mGMc7 = 200 mGMc8 = 100
         # mLc2 = 200 mLc3 = 150 mLc4 = 128 mLc5 = 300  mLc6 = 200  mLc7 = 200 mLc8 = 64
 
-        model = GTransformer_TL(input_dim= 100, #
+        model = GTransformer(input_dim= 100, #
                         #time_point = args.time_point,
                         hidden1_dim=args.hidden_dim[0],
                         hidden2_dim=args.hidden_dim[1],
@@ -517,6 +517,7 @@ print("AUROC_mean:{}".format(mean_AUROC_total))
 print("AUROC_std:{}".format(std_AUROC_total))
 print("AUPRC_mean:{}".format(mean_AUPRC_total))
 print("AUPRC_std:{}".format(std_AUPRC_total))
+
 
 
 
