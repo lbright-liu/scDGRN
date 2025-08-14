@@ -33,7 +33,11 @@ conda activate scDGRN
 #### Install using pip
 Other packages can be easily installed by calling following command:
 ```shell
-pip install -r requirements.txt
+pip install torch==1.12.1
+pip install numpy==1.23.4
+pip install pandas==1.4.4
+pip install scikit-learn
+pip install matplotlib==3.6.2
 ```
 ## Prepare input files
 The data for demo is in processed_data/mHSC-E. The sample data contained 1204 genes and 33 TFs at three time points, with a total of 1071 cells.
