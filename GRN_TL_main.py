@@ -13,7 +13,7 @@ for few_rate in [0.01,0.05,0.1]:
         import torch
         import torch.nn.functional as F
         from torch.optim import Adam,SGD
-        from gTrans_TL import GTransformer_TL
+        from gTrans_TL import GTransformer
         from torch.optim.lr_scheduler import StepLR
         #import scipy.sparse as sp
         from utils import scRNADataset, load_data, adj2saprse_tensor, Evaluation,  causal_evaluation
@@ -517,6 +517,7 @@ print("AUROC_mean:{}".format(mean_AUROC_total))
 print("AUROC_std:{}".format(std_AUROC_total))
 print("AUPRC_mean:{}".format(mean_AUPRC_total))
 print("AUPRC_std:{}".format(std_AUPRC_total))
+
 
 
 
