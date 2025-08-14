@@ -23,8 +23,8 @@ We recommend using Anaconda to get the dependencies. If you don't already have A
 * pytorch 1.12.1
 * Driver Version: 470.182.03
 * CUDA Version: 11.4
-* numpy, scipy, pandas, scikit-learn, tqdm, etc.  
-**Note: If the CUDA version of your computing device is too high, such as being greater than or equal to 11.7, you need to adjust the torch version to match the current CUDA version. For example, adjust from 1.12.1 to 1.13.1.**
+* numpy, scipy, pandas, scikit-learn, tqdm, etc.
+#### **Note: If the CUDA version of your computing device is too high, such as being greater than or equal to 11.7, you need to adjust the torch version to match the current CUDA version. For example, adjust from 1.12.1 to 1.13.1.**
 
 #### Setup a conda environment
 ```shell
