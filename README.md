@@ -109,9 +109,8 @@ scDGRN is capable of constructing stage-specific GRN, which is of vital importan
 -->
 Build stage-specific dynamic GRNs using the following command:
 ```shell
-python Stage_Specific_GRN.py --input_file xxx_tk.csv
+python Stage_Specific_GRN.py
 ```
-**'xxx_tk.csv'** can be time-series single-cell gene expression data or time-series bulk gene expression data.
 
 
 
