@@ -17,13 +17,14 @@ git clone https://github.com/lbright-liu/scDGRN
 cd scDGRN
 ```
 ### Install required packages
-We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. scDGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration. Note: If the CUDA version of your computing device is too high, such as being greater than or equal to 11.7, you need to adjust the torch version to match the current CUDA version. For example, adjust from 1.12.1 to 1.13.1.
+We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. scDGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration. 
 #### Requirements
 * python 3.8
 * pytorch 1.12.1
 * Driver Version: 470.182.03
 * CUDA Version: 11.4
 * numpy, scipy, pandas, scikit-learn, tqdm, etc.
+**Note: If the CUDA version of your computing device is too high, such as being greater than or equal to 11.7, you need to adjust the torch version to match the current CUDA version. For example, adjust from 1.12.1 to 1.13.1.**
 
 #### Setup a conda environment
 ```shell
