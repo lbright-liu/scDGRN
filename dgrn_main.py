@@ -234,7 +234,7 @@ torch.cuda.empty_cache()
 # mLc2 = 400(best) mLc3 = 150 mLc4 = 128 mLc5 = 300  mLc6 = 200  mLc7 = 200 mLc8 = 64  mLone =
 # mDC = 150 hHEP = 100
 ## 100 150  70 32  80  90  87
-model = GRNN(input_dim= 85, # 
+model = GTransformer(input_dim= 85, # 
                 #time_point = args.time_point,
                 hidden1_dim=args.hidden_dim[0],
                 hidden2_dim=args.hidden_dim[1],
@@ -377,6 +377,7 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
 
 
