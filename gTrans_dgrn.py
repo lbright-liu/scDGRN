@@ -10,7 +10,7 @@ import math
 class GTransformer(nn.Module):
     def __init__(self,input_dim,hidden1_dim,hidden2_dim,hidden3_dim,output_dim,num_head1,num_head2,
                  alpha,device,type,reduction):
-        super(GRNN, self).__init__()
+        super(GTransformer, self).__init__()
         self.num_head1 = num_head1
         self.num_head2 = num_head2
         self.device = device
@@ -891,6 +891,7 @@ class AttentionLayer(nn.Module):
             output_data = output_data + self.bias
         ############## 
         return output_data
+
 
 
 
