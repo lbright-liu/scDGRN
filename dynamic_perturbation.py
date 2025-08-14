@@ -115,4 +115,15 @@ df = pd.DataFrame(sorted_genes,columns=['gene','R_score'])
 
 df.to_csv("./processed_data/hesc2/key_gene_hesc2.csv",index=False)
 
+## Convert it into a gene name
+gene_index = df['gene'][:20].values.tolist()
+print(gene_index)
+## Convert the serial number to a name
+df_gene = pd.read_csv("./processed_data/hesc2/Target.csv")
+# df_gene = pd.read_csv("/home/llliu/nar/grn_project/Transfer_learning/mouse_brain/Target.csv")
+dic_index_gene = df_gene.set_index("index")["Gene"].to_dict()
+dic_gene_index = df_gene.set_index("Gene")["index"].to_dict()
+gene_name = [dic_index_gene[i].upper() for i in gene_index]
+print(gene_name)
+
 
