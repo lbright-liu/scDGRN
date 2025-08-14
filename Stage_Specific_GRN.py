@@ -6,6 +6,10 @@ df_stage2 = pd.read_csv('./demo_data/aged_opc/ag_opc_prediction2_3000.csv')
 df_stage3 = pd.read_csv('./demo_data/aged_opc/ag_opc_prediction3_3000.csv')
 df_stage4 = pd.read_csv('./demo_data/aged_opc/ag_opc_prediction4_3000.csv')
 
+df_stage1 = df_stage1[['TF', 'Target']]
+df_stage2 = df_stage2[['TF', 'Target']]
+df_stage3 = df_stage3[['TF', 'Target']]
+df_stage4 = df_stage4[['TF', 'Target']]
 
 print('df_stage1:{}'.format(df_stage1))
 print('df_stage2:{}'.format(df_stage2))
@@ -55,6 +59,7 @@ filtered = merged[merged['_merge'] != 'both']
 specific_stage4 = filtered[df_stage4.columns]
 print("specific_stage4:{}".format(specific_stage4))
 specific_stage4.to_csv('./demo_data/aged_opc/specific_stage4.csv',index=False)
+
 
 
 
