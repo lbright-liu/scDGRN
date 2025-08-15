@@ -42,7 +42,7 @@ pip install matplotlib==3.6.2
 pip install networkx
 pip install community
 ```
-### **You can quick start by an example [Jupyter Notebook](mouse_brain_dynGRNs_demo.ipynb).**
+### **You can quick start by an example ([Jupyter Notebook](mouse_brain_dynGRNs_demo.ipynb)).**
 ## Prepare input files
 The data for demo is in processed_data/mHSC-E. The sample data contained 1204 genes and 33 TFs at three time points, with a total of 1071 cells.
 * **Target.csv**: all genes and their index numbers.
