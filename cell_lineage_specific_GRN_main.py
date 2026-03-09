@@ -187,18 +187,11 @@ tf = tf.to(device)
 ## data_feature(tensor),tf(tensor),target(numpy)
 
 ## 已经划分好的数据集
-# train_file = './Train_validation_test/'+data_type+' '+str(num)+'/Train_set.csv'
-# test_file = './Train_validation_test/'+data_type+' '+str(num)+'/Test_set.csv'
-# val_file = './Train_validation_test/'+data_type+' '+str(num)+'/Validation_set.csv'
 
-train_file = './processed_data/'+d_type+'/Train_set1.csv'
+train_file = './processed_data/'+d_type+'/Train_set1_demo.csv'
 #train_file = './Transfer_learning/'+d_type+'/fine_tune_0.1_r5.csv'
-test_file = './processed_data/'+d_type+'/Test_set1.csv'
-val_file = './processed_data/'+d_type+'/Validation_set1.csv'
-
-# train_file = 'processed_data/'+"mesc1"+'/Train_set1.csv'
-# test_file = 'processed_data/'+"mesc1"+'/Test_set1.csv'
-# val_file = 'processed_data/'+"mesc1"+'/Validation_set1.csv'
+test_file = './processed_data/'+d_type+'/Test_set1_demo.csv'
+val_file = './processed_data/'+d_type+'/Validation_set1_demo.csv'
 
 ##
 tf_embed_path = r'Result/'+data_type+' '+str(num)+'/Channel1.csv'
@@ -370,6 +363,7 @@ else:
     AUC, AUPR, AUPR_norm = Evaluation(y_pred=score, y_true=test_data[:, -1],flag=args.flag)
     print('AUC:{}'.format(AUC),
          'AUPRC:{}'.format(AUPR))
+
 
 
 
