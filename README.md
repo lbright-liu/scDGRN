@@ -48,7 +48,7 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
 * **Target.csv**: all genes and their index numbers.
 * **TF.csv**: all TFs and their index numbers in Target.csv.
 * **label.csv**: cell-type-specific prior regulatory knowledge, collected from gene regulatory databases, biological experiments, and other gold standards.
-* **Train_set1.csv, Validation_set1.csv, and Test_set1.csv**: label data for model training and evaluation, which can be obtained using the previous three files by running the following command:
+* **Train_set1_demo.csv, Validation_set1_demo.csv, and Test_set1_demo.csv**: label data for model training and evaluation, which can be obtained using the previous three files by running the following command:
   ```shell
   python train_test_split.py
   ```
