@@ -3,8 +3,6 @@ scDGRN is a tool for deciphering fine-grained dynamic life processes using time-
 
 <img width="1421" height="1215" alt="image" src="https://github.com/user-attachments/assets/a546f417-0176-4f43-8db8-cab6d79ce465" />
 
-
-
 **The scDGRN model has the following benefits:**
 * Model time-series single-cell transcriptome data simultaneously from the two levels of network topology and temporal evolution
 * Introduce cell-type-specific prior knowledge to guide model training more accurately. Even if specific prior knowledge is lacking, the integrated common prior gene interaction network can be used for pre-training and then further fine-tuning to construct GRN
