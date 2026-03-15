@@ -40,12 +40,12 @@ pip install matplotlib==3.6.2
 pip install networkx
 pip install community
 ```
-# **We provide several tutorials and user guide, you can quick start by an example ([Jupyter Notebook](mouse_brain_dynGRNs_demo.ipynb)).**
+# **We provide several tutorials and user guide, you can quick start by an example.**
 
 | | | |
 | :---: | :---: | :---: |
-| [Mouse_brain_analysis](./tutorials/Mouse_brain_dynGRNs_analysis.ipynb) | [PBMCs tutorial](替换成你的链接)
-| [GRN benchmark](替换成你的链接) | [In silico perturbation](替换成你的链接)
+| [Mouse_brain_analysis](./tutorials/Mouse_brain_dynGRNs_analysis.ipynb) | [Tumor_CD8+T_analysis](./tutorials/Tumor_CD8T_Integrated_Analysis)
+| [Erythroid_analysis](./tutorials/Erythroid_dynamic_GRNs_analysis) | [Prior_removal_guide](./tutorials/Prior_removal.ipynb)
 
 
 ## Prepare input files
