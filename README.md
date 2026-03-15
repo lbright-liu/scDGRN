@@ -44,8 +44,8 @@ pip install community
 
 | | | |
 | :---: | :---: | :---: |
-| [Mouse_brain_analysis](./tutorials/Mouse_brain_dynGRNs_analysis.ipynb) | [Tumor_CD8+T_analysis](./tutorials/Tumor_CD8T_Integrated_Analysis.ipynb)
-| [Erythroid_analysis](./tutorials/Erythroid_dynamic_GRNs_analysis.ipynb) | [Prior_removal_guide](./tutorials/Prior_removal.ipynb)
+| [GRN_benchmark](./tutorials/Tumor_CD8T_Integrated_Analysis.ipynb)｜[Prior_removal_guide](./tutorials/Prior_removal.ipynb) ｜ [Mouse_brain_analysis](./tutorials/Mouse_brain_dynGRNs_analysis.ipynb) | 
+| [Tumor_CD8+T_analysis](./tutorials/Tumor_CD8T_Integrated_Analysis.ipynb) ｜[Erythroid_analysis](./tutorials/Erythroid_dynamic_GRNs_analysis.ipynb) | [待定](./tutorials/Prior_removal.ipynb) ｜
 
 
 ## Prepare input files
