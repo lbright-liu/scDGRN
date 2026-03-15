@@ -29,31 +29,6 @@ print(all_genes)
 gene_len = len(all_genes)
 print(len(all_genes))
 
-
-
-# Function for calculating network entropy (based on node occurrence rating)
-# def calculate_entropy(network):
-#     #node_count = len(set(sum(network, ())))  #
-#
-#     #
-#     node_probabilities = {}
-#     for edge in network:
-#         for node in edge:
-#             node_probabilities[node] = node_probabilities.get(node, 0) + 1
-#
-#     node_probabilities = {k: v / len(network) for k, v in node_probabilities.items()}
-#
-#     # #
-#     # node_freq = Counter(sum(network, ()))
-#     # node_probabilities = {node: count / len(network) for node, count in node_freq.items()}
-#     #print("???")
-#
-#     #
-#     entropy = -sum(p * np.log(p) for p in node_probabilities.values())
-#     return entropy
-
-
-
 ## Calculation based on degree distribution
 
 from collections import Counter
@@ -70,15 +45,13 @@ def calculate_entropy(network):
         #degree_count = list(node_degrees.values()).count(degree)
         probability = degree / total_nodes
         entropy -= probability * math.log2(probability)
-
+    entropy = entropy / math.log2(total_nodes)
     return entropy
 
 
 def remove_gene_and_edges(network, gene):
     modified_network = [edge for edge in network if gene not in edge]
     return modified_network
-
-
 
 
 
