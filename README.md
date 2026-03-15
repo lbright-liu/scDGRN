@@ -40,7 +40,7 @@ pip install matplotlib==3.6.2
 pip install networkx
 pip install community
 ```
-# **We provide several tutorials and user guide, you can quick start by an example.**
+# **We provide several tutorials and user guide, you can get started quickly with an example.**
 
 | | | |
 | :---: | :---: | :---: |
