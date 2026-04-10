@@ -59,11 +59,11 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
 * **mEc3_expression.csv**: time-series gene expression matrix for all time points, with rows representing genes and columns representing cells.
 
 ## Cell-lineage-specific GRN inference
-Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The codes related to user data upload and GRN construction are being continuously updated...):
+Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The expected run time for the demo dataset is approximately 5~10 minutes on a standard desktop CPU):
 ```shell
 python cell_lineage_specific_GRN_main.py
 ```
-For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mDC cell line, and you can directly run the following command. The codes related to user data upload and dynamic GRNs reconstruction are being continuously updated...):
+For some cell types lacking specific prior knowledge, GRNs can be constructed by transfer learning, which is pre-trained using integrated common prior gene interaction network (**demo_data/NicheNet**), and then fine-tuned using a small amount of cell-type-specific prior knowledge (We have prepared sample data for the mDC cell line, and you can directly run the following command):
 ```shell
 python GRN_TL_main.py
 ```
