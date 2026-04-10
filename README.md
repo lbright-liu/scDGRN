@@ -59,7 +59,7 @@ The data for demo is in processed_data/mHSC-E. The sample data contained 1204 ge
 * **mEc3_expression.csv**: time-series gene expression matrix for all time points, with rows representing genes and columns representing cells.
 
 ## Cell-lineage-specific GRN inference
-Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The expected run time for the demo dataset is approximately 5~10 minutes on a standard desktop CPU):
+Taking time-series single-cell gene expression matrix and cell type-specific prior regulatory knowledge as inputs, the following commands are executed for GRN construction (We have prepared sample data for the mEc3 cell line, and you can directly run the following command. The expected run time for the demo dataset is approximately 5~10 minutes on a standard GPU):
 ```shell
 python cell_lineage_specific_GRN_main.py
 ```
