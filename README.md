@@ -15,7 +15,7 @@ git clone https://github.com/lbright-liu/scDGRN
 cd scDGRN
 ```
 ### Install required packages
-We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. scDGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8~3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration. The typical install time of scDGRN'operating environment on a 'normal' desktop computer is about 10~20 minutes.
+We recommend using Anaconda to get the dependencies. If you don't already have Anaconda, install it by following the instructions at this link: https://docs.anaconda.com/anaconda/install/. scDGRN was originally tested on Ubuntu 18.04.6 LTS with Python (3.8-3.9), please use an NVIDIA GPU with CUDA support for GPU acceleration. The typical install time of scDGRN'operating environment on a 'normal' desktop computer is about 10-20 minutes.
 #### Requirements
 * python 3.8
 * pytorch 1.12.1
